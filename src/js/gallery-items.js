@@ -1,3 +1,5 @@
+import { galleryItems } from './gallery-items';
+
 export const galleryItems = [
   {
     preview:
@@ -63,3 +65,16 @@ export const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+export const imgArr = galleryItems
+  .map(({ preview, original, description }) => {
+    return;
+    `<li class="gallery__item">
+    <a class="gallery__link" href="${original}">
+    <img 
+    class="gallery__image"
+    src="${preview}" 
+    alt="${description}" />
+    </a>
+</li>`;
+  })
+  .join('');
